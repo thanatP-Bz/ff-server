@@ -30,6 +30,10 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
+app.get("/", (req, res) => {
+  res.send("server!!");
+});
+
 const PORT = process.env.PORT || 5000;
 
 const start = async () => {
