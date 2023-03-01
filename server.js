@@ -1,6 +1,10 @@
 import express from "express";
 import "express-async-errors";
 import "body-parser";
+
+//cors
+import cors from "cors";
+
 //connect to DB
 import connectDB from "./database/connectDB.js";
 
@@ -15,6 +19,7 @@ import uploadRoute from "./routes/uploadRoute.js";
 
 //express app
 const app = express();
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //routes
