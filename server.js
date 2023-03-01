@@ -14,6 +14,7 @@ import uploadRoute from "./routes/uploadRoute.js";
 
 //express app
 const app = express();
+app.use(express.json());
 
 //routes
 app.use("/api/auth", userRoutes);
