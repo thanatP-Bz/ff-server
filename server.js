@@ -15,10 +15,6 @@ import uploadRoute from "./routes/uploadRoute.js";
 //express app
 const app = express();
 
-//middleware
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
-
 //routes
 app.use("/api/auth", userRoutes);
 app.use("/api/upload", uploadRoute);
