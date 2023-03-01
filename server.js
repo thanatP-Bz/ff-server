@@ -20,7 +20,7 @@ import uploadRoute from "./routes/uploadRoute.js";
 //express app
 const app = express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //routes
 app.use("/api/auth", userRoutes);
