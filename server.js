@@ -23,16 +23,15 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api/auth", userRoutes);
 app.use("/api/upload", uploadRoute);
 
+app.get("/", (req, res) => {
+  res.send("server!!");
+});
 //error handler middleware
 import notFoundMiddleware from "./middleware/not-found-.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
-
-app.get("/", (req, res) => {
-  res.send("server!!");
-});
 
 const PORT = process.env.PORT || 5000;
 
