@@ -1,5 +1,6 @@
 import express from "express";
 import "express-async-errors";
+import "body-parser";
 //connect to DB
 import connectDB from "./database/connectDB.js";
 
@@ -14,7 +15,7 @@ import uploadRoute from "./routes/uploadRoute.js";
 
 //express app
 const app = express();
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //routes
 app.use("/api/auth", userRoutes);
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 //error handler middleware
 import notFoundMiddleware from "./middleware/not-found-.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
+import bodyParser from "body-parser";
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
